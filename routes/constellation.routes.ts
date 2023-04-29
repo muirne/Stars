@@ -15,9 +15,9 @@ router.get('/', async (req: Request, res: Response) => {
     }
 });
 
-router.get('/:id', async (req: Request, res: Response) => {
+router.get("/:id", async (req: Request, res: Response) => {
 
-    const id = Number(req.params.id);
+    const id = Number(req.params['id']);
     const result = await Constellation.findByPk(id, {
         include: [{model: Star}],
     });
@@ -41,7 +41,7 @@ router.post('/add', async (req: Request, res: Response) => {
 });
 
 router.put('/edit/:id', async (req: Request, res: Response) => {
-    const id = Number(req.params.id);
+    const id = Number(req.params['id']);
     let constellation = req.body as Constellation;
     await Constellation.update({...constellation}, {where: {id}});
     const updatedConstellation: Constellation | null = await Constellation.findByPk(id);
@@ -54,7 +54,7 @@ router.put('/edit/:id', async (req: Request, res: Response) => {
 })
 
 router.delete('/delete/:id', async (req: Request, res: Response) => {
-    const id = Number(req.params.id);
+    const id = Number(req.params['id']);
     const constellationToDelete: Constellation | null = await Constellation.findByPk(id);
 
     if (constellationToDelete) {

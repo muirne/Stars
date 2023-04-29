@@ -14,7 +14,9 @@ export class MyskyComponent  implements OnInit, OnDestroy{
   private sub: Subscription;
 
 
- constructor(public postsService: PostService  ){ }
+ constructor(public postsService: PostService  ){ 
+  this.sub = Subscription.EMPTY;
+ }
   
  ngOnInit(){
    this.posts=this.postsService.getPosts();

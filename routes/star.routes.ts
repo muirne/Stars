@@ -14,7 +14,7 @@ router.get('/', async (req: Request, res: Response) => {
 });
 
 router.get('/:id', async (req: Request, res: Response) => {
-    const id = Number(req.params.id);
+    const id = Number(req.params['id']);
     const result = await Star.findByPk(id);
     if (result) {
         return res.status(200).json({star: result});
@@ -37,7 +37,7 @@ router.post('/add', async (req: Request, res: Response) => {
 });
 
 router.put('/edit/:id', async (req: Request, res: Response) => {
-    const id = Number(req.params.id);
+  const id = Number(req.params['id']);
     let star = req.body as Star;
     await Star.update({...star}, {where: {id}});
     const updatedStar: Star | null = await Star.findByPk(id);
@@ -50,7 +50,7 @@ router.put('/edit/:id', async (req: Request, res: Response) => {
 })
 
 router.delete('/delete/:id', async (req: Request, res: Response) => {
-    const id = Number(req.params.id);
+  const id = Number(req.params['id']);
     const starToDelete: Star | null = await Star.findByPk(id);
     await Star.destroy({where: {id}});
 

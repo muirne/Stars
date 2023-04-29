@@ -1,5 +1,6 @@
-import * as express from "express";
-import * as bodyParser from "body-parser";
+import express from "express";
+import { Application, Request, Response, NextFunction } from 'express';
+import bodyParser from "body-parser";
 
 class App {
 
@@ -17,3 +18,13 @@ class App {
 
 }
 export default new App().app;
+
+// import express from "express";
+
+// const app = express();
+
+// app.listen(3000, function() {
+//   console.log("server start running");
+// });
+
+// export default app;

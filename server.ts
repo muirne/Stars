@@ -1,6 +1,6 @@
-import app from "config/app";
+import app from "./config/app";
 import { port } from "./config";
-import starsRoutes from "routes/star.routes";
+import starsRoutes from "./routes/star.routes";
 import constellationRoutes from "./routes/constellation.routes";
 
 app.listen(port, () => {
