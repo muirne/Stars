@@ -24,7 +24,16 @@
       "ES2022",
       "dom"
     ]
+    
   },
+  
+  "include": [
+    "src/**/*.ts"
+  ],
+  "ts-node": {
+    "esm": true,
+    "experimentalSpecifierResolution": "node",
+},
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,
     "strictInjectionParameters": true,
