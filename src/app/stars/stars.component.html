@@ -1,13 +1,13 @@
 <mat-card>
   <!-- <mat-spinner *ngIf="isLoading"></mat-spinner> -->
-  <h1>CONSTELLATIONS</h1>
+  <h1>STARS</h1>
   <form (submit)="onSavePost(postForm)" #postForm="ngForm" *ngIf="!isLoading">
     <mat-form-field>
       <input
         matInput
         type="text"
         name="name"
-        [ngModel]="post?.name"
+        ngModel
         required
         placeholder="name"
         #title="ngModel"
@@ -37,14 +37,14 @@
       />
     </mat-form-field>
     <mat-form-field>
-      <mat-label>Select Stars</mat-label>
+      <mat-label>Select constellation</mat-label>
       <input
         matInput
-        type="number"
-        name="stars"
+        type="select"
+        name="constellation"
         ngModel
         required
-        placeholder="stars"
+        placeholder="constellation"
         #title="ngModel"
       />
     </mat-form-field>

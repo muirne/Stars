@@ -6,6 +6,8 @@ import {MatCardModule} from '@angular/material/card';
 import {MatButtonModule} from '@angular/material/button';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatExpansionModule} from '@angular/material/expansion';
+import{HttpClientModule} from '@angular/common/http';
+
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -14,13 +16,16 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HeaderComponent } from './header/header.component';
 import { MyskyComponent } from './mysky/mysky.component';
 import { PostService } from './posts.service';
-
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import { StarsComponent } from './stars/stars.component';
+import { StarsService } from './stars.service';
 @NgModule({
   declarations: [
     AppComponent,
     KonstelacjaComponent,
     HeaderComponent,
-    MyskyComponent
+    MyskyComponent,
+    StarsComponent
   ],
   imports: [
     BrowserModule,
@@ -32,9 +37,11 @@ import { PostService } from './posts.service';
     MatButtonModule,
     MatToolbarModule,
     MatExpansionModule,
+    HttpClientModule,
+    MatProgressSpinnerModule
     
   ],
-  providers: [PostService],
+  providers: [PostService, StarsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

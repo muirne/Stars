@@ -3,3 +3,13 @@
 mat-form-field, textarea{
   width:100%;
 }
+
+h1 {
+  background: linear-gradient(rgba(0, 147, 233, 1), rgba(128, 208, 199, 1));
+
+  text-transform: uppercase;
+  color: aliceblue;
+  font-weight: 200;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
